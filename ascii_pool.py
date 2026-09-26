@@ -574,7 +574,8 @@ class Game:
                 self.msg = 'The 8-ball drops - rack won!'
             else:
                 self.winner = 1 - shooter
-                self.msg = '8-ball down illegally - rack lost'
+                why = foul if foul else 'potted too early'
+                self.msg = '8-ball down illegally (%s) - rack lost' % why
             self.state = 'over'
             return
         # group assignment (open table, after the break, clean shot)
